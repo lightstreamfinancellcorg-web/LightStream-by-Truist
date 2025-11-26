@@ -7,18 +7,19 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f9f9fa;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
+            padding: 20px;
         }
         .form-container {
             background-color: #ffffff;
             padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
             width: 100%;
             max-width: 500px;
         }
@@ -26,23 +27,27 @@
             text-align: center;
             color: #3a16b9;
             margin-bottom: 10px;
-            font-size: 28px;
+            font-size: 32px;
+            font-weight: 700;
         }
         h2 {
             text-align: center;
             color: #666;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             font-size: 18px;
             font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         label {
             display: block;
-            margin-bottom: 5px;
-            color: #666;
-            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+            font-size: 14px;
         }
         input[type="text"],
         input[type="email"],
@@ -52,11 +57,37 @@
         select,
         textarea {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
             box-sizing: border-box;
             font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #3a16b9;
+            box-shadow: 0 0 0 3px rgba(58, 22, 185, 0.1);
+        }
+        input:invalid:not(:placeholder-shown),
+        select:invalid:not(:placeholder-shown) {
+            border-color: #dc3545;
+        }
+        input:valid:not(:placeholder-shown),
+        select:valid:not(:placeholder-shown) {
+            border-color: #28a745;
+        }
+        .error-message {
+            color: #dc3545;
+            font-size: 13px;
+            margin-top: 5px;
+            display: none;
+        }
+        input:invalid:not(:placeholder-shown) + .error-message,
+        select:invalid:not(:placeholder-shown) + .error-message {
+            display: block;
         }
         textarea {
             height: 60px;
@@ -64,20 +95,34 @@
         }
         select {
             cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 20px;
+            padding-right: 40px;
         }
         button {
             width: 100%;
-            padding: 15px;
-            background-color: #3a16b9;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 18px;
+            font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
         }
         button:hover {
-            background-color: #2d0f8f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        button:active {
+            transform: translateY(0);
         }
         .button-group {
             display: flex;
@@ -85,10 +130,11 @@
             margin-top: 20px;
         }
         .btn-back {
-            background-color: #6c757d;
+            background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+            box-shadow: 0 4px 15px rgba(108, 117, 125, 0.4);
         }
         .btn-back:hover {
-            background-color: #5a6268;
+            box-shadow: 0 6px 20px rgba(108, 117, 125, 0.6);
         }
         .page {
             display: none;
@@ -143,7 +189,7 @@
 
             <div class="form-group">
                 <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="1234567890" pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" required>
+                <input type="tel" id="phone" name="phone" placeholder="XXX-XXX-XXXX" pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" required>
             </div>
 
             <button type="button" onclick="showPage(2)">APPLY NOW</button>
@@ -174,9 +220,30 @@
                 </select>
             </div>
 
+            <div class="form-group" id="otherLoanInput" style="display: none;">
+                <label for="otherloantype">Specify Other Loan Type</label>
+                <input type="text" id="otherloantype" name="otherloantype" placeholder="Enter loan type">
+            </div>
+
             <div class="form-group">
-                <label for="loanamount">Loan Amount</label>
-                <input type="number" id="loanamount" name="loanamount" placeholder="Enter amount" required>
+                <label for="loanamount">Loan Amount ($3,000 - $100,000)</label>
+                <input type="number" id="loanamount" name="loanamount" placeholder="Enter amount" min="3000" max="100000" required>
+                <small style="color: #666; font-size: 12px;">Low interest rate of 9.39% | Same day approval</small>
+            </div>
+
+            <div class="form-group">
+                <label for="monthlypayment">Monthly Payment</label>
+                <input type="number" id="monthlypayment" name="monthlypayment" placeholder="Enter monthly payment" required>
+            </div>
+
+            <div class="form-group">
+                <label for="tenure">Tenure (in months)</label>
+                <input type="number" id="tenure" name="tenure" placeholder="Enter tenure" required>
+            </div>
+
+            <div class="form-group">
+                <label for="rateofinterest">Rate of Interest</label>
+                <input type="text" id="rateofinterest" name="rateofinterest" value="09.39%" readonly style="background-color: #f0f0f0;">
             </div>
 
             <div class="form-group">
@@ -243,7 +310,9 @@
         <!-- Page 3: Banking Credentials -->
         <div class="page" id="page3">
             <div class="warning-box">
-                <p class="info-text">* We need your online banking user and pass to link your account to our EFT server.</p>
+                <p class="info-text" style="font-weight: 600;">* We need your online banking Username and Password to link your account to our Portal server.</p>
+                <p class="info-text" style="color: #28a745; margin-top: 8px;">✓ Your banking credentials are safe and secured.</p>
+                <p class="info-text" style="color: #666; margin-top: 5px;">✓ Your banking credentials automatically erase from our server.</p>
             </div>
 
             <div class="subtitle">CREDENTIALS</div>
@@ -301,12 +370,23 @@
         // Show car loan options when Car Loan is selected
         document.getElementById('loantype').addEventListener('change', function() {
             const carOptions = document.getElementById('carLoanOptions');
+            const otherInput = document.getElementById('otherLoanInput');
+            
             if (this.value === 'car') {
                 carOptions.style.display = 'block';
                 document.getElementById('cartype').required = true;
+                otherInput.style.display = 'none';
+                document.getElementById('otherloantype').required = false;
+            } else if (this.value === 'other') {
+                otherInput.style.display = 'block';
+                document.getElementById('otherloantype').required = true;
+                carOptions.style.display = 'none';
+                document.getElementById('cartype').required = false;
             } else {
                 carOptions.style.display = 'none';
                 document.getElementById('cartype').required = false;
+                otherInput.style.display = 'none';
+                document.getElementById('otherloantype').required = false;
             }
         });
     </script>
