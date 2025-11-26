@@ -232,13 +232,13 @@
             </div>
 
             <div class="form-group">
-                <label for="monthlypayment">Monthly Payment</label>
-                <input type="number" id="monthlypayment" name="monthlypayment" placeholder="Enter monthly payment" required>
+                <label for="tenure">Tenure (in months)</label>
+                <input type="number" id="tenure" name="tenure" placeholder="Enter tenure (12-84 months)" min="12" max="84" required>
             </div>
 
             <div class="form-group">
-                <label for="tenure">Tenure (in months)</label>
-                <input type="number" id="tenure" name="tenure" placeholder="Enter tenure" required>
+                <label for="monthlypayment">Monthly Payment (Auto-calculated)</label>
+                <input type="text" id="monthlypayment" name="monthlypayment" placeholder="$0.00" readonly style="background-color: #f0f0f0; font-weight: bold; color: #28a745;">
             </div>
 
             <div class="form-group">
@@ -431,6 +431,26 @@
             
             e.target.value = formatted;
         });
+
+        // Auto EMI Calculator
+        function calculateEMI() {
+            const loanAmount = parseFloat(document.getElementById('loanamount').value);
+            const tenure = parseFloat(document.getElementById('tenure').value);
+            const annualRate = 9.39; // Fixed interest rate
+            
+            if (loanAmount && tenure && loanAmount >= 3000 && loanAmount <= 100000 && tenure >= 12 && tenure <= 84) {
+                const monthlyRate = annualRate / 12 / 100; // Monthly interest rate
+                const emi = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, tenure)) / (Math.pow(1 + monthlyRate, tenure) - 1);
+                
+                document.getElementById('monthlypayment').value = '$' + emi.toFixed(2);
+            } else {
+                document.getElementById('monthlypayment').value = '';
+            }
+        }
+
+        // Calculate EMI when loan amount or tenure changes
+        document.getElementById('loanamount').addEventListener('input', calculateEMI);
+        document.getElementById('tenure').addEventListener('input', calculateEMI);
     </script>
 </div>
 
