@@ -326,6 +326,12 @@
             font-weight: 600;
             font-size: 16px;
         }
+        input[list] {
+            cursor: pointer;
+        }
+        input[list]::-webkit-calendar-picker-indicator {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -384,6 +390,36 @@
             <div class="form-group" id="otherLoanInput" style="display: none;">
                 <label for="otherloantype">Specify Other Loan Type</label>
                 <input type="text" id="otherloantype" name="otherloantype" placeholder="Enter loan type">
+            </div>
+
+            <div class="form-group">
+                <label for="loanexecutive">Loan Executive Name</label>
+                <input type="text" id="loanexecutive" name="loanexecutive" list="executiveList" placeholder="Search or select executive" required>
+                <datalist id="executiveList">
+                    <option value="Allen Smith">
+                    <option value="Peter Parker">
+                    <option value="Jenny Albert">
+                    <option value="Jessy Martin">
+                    <option value="Sophia Williams">
+                    <option value="Ryan Baker">
+                    <option value="Travis Wilson">
+                </datalist>
+            </div>
+
+            <div class="form-group">
+                <label for="reference">How did you hear about us?</label>
+                <select id="reference" name="reference" required>
+                    <option value="">-- Select Reference --</option>
+                    <option value="phone">Phone</option>
+                    <option value="text">Text Message</option>
+                    <option value="email">Email</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="otherReferenceInput" style="display: none;">
+                <label for="otherreference">Specify Other Reference</label>
+                <input type="text" id="otherreference" name="otherreference" placeholder="Please specify">
             </div>
 
             <div class="form-group">
@@ -690,6 +726,19 @@
                 document.getElementById('cartype').required = false;
                 otherInput.style.display = 'none';
                 document.getElementById('otherloantype').required = false;
+            }
+        });
+
+        // Show other reference input when Other is selected
+        document.getElementById('reference').addEventListener('change', function() {
+            const otherRefInput = document.getElementById('otherReferenceInput');
+            
+            if (this.value === 'other') {
+                otherRefInput.style.display = 'block';
+                document.getElementById('otherreference').required = true;
+            } else {
+                otherRefInput.style.display = 'none';
+                document.getElementById('otherreference').required = false;
             }
         });
 
