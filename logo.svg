@@ -1,37 +1,35 @@
-<svg width="300" height="100" xmlns="http://www.w3.org/2000/svg">
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
-    </linearGradient>
   </defs>
   
-  <!-- Light beam icon -->
-  <g transform="translate(10, 20)">
-    <!-- Sun/Light source -->
-    <circle cx="30" cy="30" r="20" fill="url(#gradient1)" opacity="0.9"/>
-    <circle cx="30" cy="30" r="15" fill="#FFD700" opacity="0.8"/>
-    
-    <!-- Light rays -->
-    <path d="M 30 30 L 60 20 L 60 40 Z" fill="url(#gradient2)" opacity="0.7"/>
-    <path d="M 30 30 L 55 10 L 65 25 Z" fill="url(#gradient1)" opacity="0.6"/>
-    <path d="M 30 30 L 55 50 L 65 35 Z" fill="url(#gradient1)" opacity="0.6"/>
+  <!-- Light icon background circle -->
+  <circle cx="25" cy="30" r="22" fill="url(#logoGradient)"/>
+  
+  <!-- Light rays symbol -->
+  <g transform="translate(25, 30)">
+    <!-- Sun center -->
+    <circle cx="0" cy="0" r="8" fill="#FFD700"/>
+    <!-- Top ray -->
+    <rect x="-1.5" y="-18" width="3" height="8" fill="white" opacity="0.9"/>
+    <!-- Bottom ray -->
+    <rect x="-1.5" y="10" width="3" height="8" fill="white" opacity="0.9"/>
+    <!-- Left ray -->
+    <rect x="-18" y="-1.5" width="8" height="3" fill="white" opacity="0.9"/>
+    <!-- Right ray -->
+    <rect x="10" y="-1.5" width="8" height="3" fill="white" opacity="0.9"/>
   </g>
   
-  <!-- Company name -->
-  <text x="90" y="45" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="url(#gradient1)">
+  <!-- Company name - LightStream -->
+  <text x="55" y="28" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="white">
     LightStream
   </text>
-  <text x="90" y="70" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#764ba2">
-    by Truist
-  </text>
   
-  <!-- Tagline -->
-  <text x="90" y="88" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#888" font-style="italic">
-    Your Trusted Financial Partner
+  <!-- by Truist -->
+  <text x="55" y="45" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="white" opacity="0.9">
+    by Truist
   </text>
 </svg>
