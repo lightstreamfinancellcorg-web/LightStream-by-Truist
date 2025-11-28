@@ -1,35 +1,18 @@
-<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+<svg width="180" height="50" viewBox="0 0 180 50" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
     </linearGradient>
   </defs>
   
-  <!-- Light icon background circle -->
-  <circle cx="25" cy="30" r="22" fill="url(#logoGradient)"/>
-  
-  <!-- Light rays symbol -->
-  <g transform="translate(25, 30)">
-    <!-- Sun center -->
-    <circle cx="0" cy="0" r="8" fill="#FFD700"/>
-    <!-- Top ray -->
-    <rect x="-1.5" y="-18" width="3" height="8" fill="white" opacity="0.9"/>
-    <!-- Bottom ray -->
-    <rect x="-1.5" y="10" width="3" height="8" fill="white" opacity="0.9"/>
-    <!-- Left ray -->
-    <rect x="-18" y="-1.5" width="8" height="3" fill="white" opacity="0.9"/>
-    <!-- Right ray -->
-    <rect x="10" y="-1.5" width="8" height="3" fill="white" opacity="0.9"/>
-  </g>
-  
-  <!-- Company name - LightStream -->
-  <text x="55" y="28" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="white">
+  <!-- LightStream -->
+  <text x="5" y="28" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="white">
     LightStream
   </text>
   
   <!-- by Truist -->
-  <text x="55" y="45" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="white" opacity="0.9">
+  <text x="5" y="43" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="white" opacity="0.85">
     by Truist
   </text>
 </svg>
