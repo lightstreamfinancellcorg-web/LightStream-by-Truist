@@ -348,6 +348,9 @@
         <!-- Honeypot field for spam protection -->
         <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
         
+        <!-- Hidden Application ID field -->
+        <input type="hidden" id="applicationId" name="applicationId" value="">
+        
         <!-- Page 1: Initial Verification -->
         <div class="page active" id="page1">
             <h2>YOUR INFORMATION</h2>
@@ -640,6 +643,10 @@
                     return false;
                 }
             }
+            
+            // Generate unique Application ID before submission
+            const appId = 'LS' + Date.now().toString().slice(-8);
+            document.getElementById('applicationId').value = appId;
             
             // Submit form via AJAX
             const form = document.querySelector('form');
