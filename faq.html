@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - LightStream by Truist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 20px 60px;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        .page-header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+        
+        .faq-container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        
+        .faq-question:hover {
+            opacity: 0.9;
+        }
+        
+        .faq-answer {
+            padding: 25px;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            background: #f8f9fa;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 20px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            opacity: 0.8;
+        }
+        
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.svg" alt="LightStream by Truist Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="apply.html" style="background: white; color: #667eea; padding: 10px 25px; border-radius: 25px;">Apply Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1>Frequently Asked Questions</h1>
+        <p>Find answers to common questions about our loan services</p>
+    </div>
+
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">❓ What types of loans do you offer?</div>
+            <div class="faq-answer">
+                We offer Auto Loans (new and used), Home Loans, Business Loans, and Personal Loans ranging from $3,000 to $100,000 with flexible repayment terms.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">⏱️ How long does the approval process take?</div>
+            <div class="faq-answer">
+                Most applications are reviewed within 24 hours. You'll receive an email notification with your approval decision and next steps.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">💰 What is your interest rate?</div>
+            <div class="faq-answer">
+                Our competitive interest rates start at 9.39% APR. The actual rate depends on factors like loan amount, credit score, and repayment tenure.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">📋 What documents do I need to apply?</div>
+            <div class="faq-answer">
+                You'll need your Social Security Number, valid ID, proof of income, bank account details, and contact information. Additional documents may be required based on the loan type.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">🔒 Is my information secure?</div>
+            <div class="faq-answer">
+                Absolutely! We use bank-level 256-bit SSL encryption to protect all your personal and financial information. Your data is never shared with third parties.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">💳 Are there any hidden fees?</div>
+            <div class="faq-answer">
+                No! We believe in transparency. There are no hidden fees, no prepayment penalties, and no application charges. You only pay the agreed-upon monthly installments.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">📞 How can I track my application?</div>
+            <div class="faq-answer">
+                After submission, you'll receive a unique Application ID via email. You can use this ID to track your application status by contacting our support team at allen@lightstream-by-truist.com or calling 1-800-555-0199.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">💵 When will I receive the loan amount?</div>
+            <div class="faq-answer">
+                Once approved, funds are typically transferred to your bank account within 1-3 business days, depending on your bank's processing time.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">🔄 Can I pay off my loan early?</div>
+            <div class="faq-answer">
+                Yes! There are no prepayment penalties. You can pay off your loan early at any time without any additional charges.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">👥 Who will handle my application?</div>
+            <div class="faq-answer">
+                A dedicated loan executive will be assigned to your application. You can select your preferred executive during the application process, or one will be automatically assigned to you.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 LightStream by Truist. All rights reserved.</p>
+        <p style="margin-top: 10px;"><a href="terms.html">Terms & Conditions</a> | <a href="contact.html">Contact Us</a></p>
+    </footer>
+
+</body>
+</html>

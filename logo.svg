@@ -1,0 +1,37 @@
+<svg width="300" height="100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Light beam icon -->
+  <g transform="translate(10, 20)">
+    <!-- Sun/Light source -->
+    <circle cx="30" cy="30" r="20" fill="url(#gradient1)" opacity="0.9"/>
+    <circle cx="30" cy="30" r="15" fill="#FFD700" opacity="0.8"/>
+    
+    <!-- Light rays -->
+    <path d="M 30 30 L 60 20 L 60 40 Z" fill="url(#gradient2)" opacity="0.7"/>
+    <path d="M 30 30 L 55 10 L 65 25 Z" fill="url(#gradient1)" opacity="0.6"/>
+    <path d="M 30 30 L 55 50 L 65 35 Z" fill="url(#gradient1)" opacity="0.6"/>
+  </g>
+  
+  <!-- Company name -->
+  <text x="90" y="45" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="url(#gradient1)">
+    LightStream
+  </text>
+  <text x="90" y="70" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#764ba2">
+    by Truist
+  </text>
+  
+  <!-- Tagline -->
+  <text x="90" y="88" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#888" font-style="italic">
+    Your Trusted Financial Partner
+  </text>
+</svg>
